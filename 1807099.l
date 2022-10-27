@@ -99,8 +99,7 @@ multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*
 int yywrap(){}
 
 int main(){
+    yylex();
     yyin = freopen("input.txt","r",stdin);
 	yyout = freopen("output.txt","w",stdout);
-    yylex();
-    printf("%s", yyin);
 }
