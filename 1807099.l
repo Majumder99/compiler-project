@@ -30,7 +30,7 @@ multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*
 "third_right_bracket"	  { printf("]"); }
 "import" {printf("include");}
 "define_korlam" {printf("define");}
-"asol_number"	{ printf("int"); }
+"asol"	{ printf("int"); }
 "vongnangso_number"	{ printf("float"); }
 "double_vongnangso_number"	{ printf("double"); }
 "string_literal"	{ printf("string"); }
@@ -72,21 +72,26 @@ multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*
 "komma" {printf(",");}
 "double_qoute" {printf("\"");}
 "single_qoute" {printf("\'");}
-" " {}
+" " {printf(" ");}
 [0-9]+ { 
 	int n = atoi(yytext);
 	printf("%d", n);
 }
+
 {identifiers} {
+
 	char* a=strdup(yytext);
-	printf("%s", a);
+    char s[50];
+    int j = 0;
+    for(int i = 7 ; i < strlen(a) ; i++){
+        s[j++] = a[i];
+    }
+    s[j] = '\0';
+	printf("%s", s);
 }
 [a-zA-Z] {printf("%s", yytext);}
-[ \t\n]* {}
 
-. {
-		printf("Unknown Character.\n");
-}
+
 
 %%
 
@@ -94,7 +99,8 @@ multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*
 int yywrap(){}
 
 int main(){
-    yylex();
     yyin = freopen("input.txt","r",stdin);
 	yyout = freopen("output.txt","w",stdout);
+    yylex();
+    printf("%s", yyin);
 }
