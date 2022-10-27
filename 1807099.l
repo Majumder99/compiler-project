@@ -11,7 +11,7 @@
 /* unary_operator "inc"|"dec" */
 
 %%
-identifiers "variable_"[a-zA-Z]([a-zA-Z0-9])*
+identifiers "cholok_"[a-zA-Z]([a-zA-Z0-9])*
 single_line_comment [/][/].*
 multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"last_comment"[/]
 
@@ -33,8 +33,8 @@ multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*
 "second_right_bracket"	  { printf("}"); }
 "third_left_bracket"	 { printf("["); }
 "third_right_bracket"	  { printf("]"); }
-"@import" {printf("#include");}
-"define_korlam" {printf("#define");}
+"import" {printf("include");}
+"define_korlam" {printf("define");}
 "asol_number"	{ printf("int"); }
 "vongnangso_number"	{ printf("float"); }
 "double_vongnangso_number"	{ printf("double"); }
@@ -57,39 +57,29 @@ multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*
 "thamo_eibar" {printf("break");}
 "chalaya_jao" {printf("continue");}
 "pointer" {printf("*");}
+"soman_chinho" {printf("=");}
+"plus_sign" {printf("+");}
+"minus_sign" {printf("-");}
+"plus_increment" {printf("++");}
+"minus_increment" {printf("--");}
+"ampersand" {printf("&");}
+"percentage" {printf("%c", 37);}
+"hashinclude" {printf("#");}
 
- 
+"exclamatory_sign" {printf("!");}
+"ouput_dekho" {printf("printf");}
+"input_dao" {printf("scanf");}
+"exponential" {printf("^");}
 
-"brk"    {   return BREAK;     }
-"check"      { return CASE;      }
-"incident"      { return SWITCH;	}
-"nop"     {  return DEFAULT; 	}
-"wlp" { return WHILE;}
-"flt"	{ return FLOAT; }
-"ch"	{ return CHAR; }
-[:]     { return COL;}
 [0-9]+	{ 
-		yylval.number = atoi(yytext);
-		return NUM;
-	}
-"flp"   { return FOR;}	
-"fop"	{ return LP; }
-"fcp"	{ return RP; }
-"$"	{ return CM; }
-"#"	{ return SM; }
-"addition"	{ return PLUS;}
-"subtraction"	{ return MINUS; }
-"multiplication"	{ return MULT; }
-"division"	{ return DIV; }
-"exponential"	{ return POW; }
-[@]		{ return ASSIGN;  }
-"grt"	{ return GT; }
-"lrt"	{ return LT; }
+	int n = atoi(yytext);
+	printf("%d", n);
+}
 
 {identifiers} {
-	 yylval.string=strdup(yytext);
-	 return VAR;
-	}
+	char* a=strdup(yytext);
+	printf("%s", a);
+}
 
 "iff"		{ return IF;}
 "oriff"	{ return ELIF; }
