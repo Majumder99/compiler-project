@@ -1,0 +1,37 @@
+hashincludeimport greater_than stdioH less_than
+
+int binarySearch(int a[], int x, int low, int high){
+    if(low > high){
+        return false;
+    }else{
+        int mid = (low + high) / 2;
+        if(a[mid] == x){
+            return mid;
+        }else if(x > a[mid]){
+            return binarySearch(a, x, mid + 1, high);
+        }else{
+            return binarySearch(a, x, low, mid - 1);
+        }
+    }
+}
+
+asol asol_function first_left_bracket first_right_bracket second_left_bracket
+    asol cholok_k komma cholok_n semi_colon
+    input_dao first_left_bracket double_qoute percentage d double_qoute komma ampersand cholok_n first_right_bracket semi_colon
+    asol a third_left_bracket cholok_n plus_sign 1 third_right_bracket semi_colon
+    jonno first_left_bracket asol cholok_i soman_chinho 0 semi_colon cholok_i less_than cholok_n semi_colon cholok_i plus_increment first_right_bracket second_left_bracket
+        cin >> a[i];
+        scanf("%d", &a[i]);
+        input_dao first_left_bracket double_qoute percentage d double_qoute komma ampersand cholok_n first_right_bracket semi_colon
+    }
+    for(int i = 0 ; i < n ; i++){
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    cout << "Give the digit you wanna find" << endl;
+    cin >> k;
+    int result = binarySearch(a, k, 0, n-1);
+    cout << "Index is : " << result << " Value is : " << a[result] << endl;
+    return 0;
+}

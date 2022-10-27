@@ -5,28 +5,23 @@
 	#include<stdlib.h>
 %}
 
-
-
-/*RE and Action*/
-/* unary_operator "inc"|"dec" */
-
-%%
 identifiers "cholok_"[a-zA-Z]([a-zA-Z0-9])*
 single_line_comment [/][/].*
 multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"last_comment"[/]
 
-
-
+%%
 
 {single_line_comment} {
 	printf("This is single line comment\n");
 
 }
 {multiple_line_comment} {
-	printf("This is multiple line comment");
+	printf("This is multiple line comment\n");
 }
-
-// {unary_operator}   {return inc;}
+"stdioH" {printf("stdio.h");}
+"stringH" {printf("string.h");}
+"mathH" {printf("math.h");}
+"stdlibH" {printf("stdlib.h");}
 "first_left_bracket"	 { printf("("); }
 "first_right_bracket"	  { printf(")"); }
 "second_left_bracket"	 { printf("{"); }
@@ -49,49 +44,48 @@ multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*
 "firiye_dilam" {printf("return");}
 "kichu_nai" {printf("void");}
 "semi_colon" {printf(";");}
+"colon" {printf(":");}
 "size_of_something" {printf("sizeof");}
 "change_koro" {printf("switch");}
 "struct_funtion" {printf("struct");}
 "number_point" {printf("case");}
-"colon" {printf(":");}
 "thamo_eibar" {printf("break");}
 "chalaya_jao" {printf("continue");}
 "pointer" {printf("*");}
 "soman_chinho" {printf("=");}
 "plus_sign" {printf("+");}
 "minus_sign" {printf("-");}
+"vagkoro" {printf("/");}
 "plus_increment" {printf("++");}
 "minus_increment" {printf("--");}
 "ampersand" {printf("&");}
 "percentage" {printf("%c", 37);}
 "hashinclude" {printf("#");}
-
 "exclamatory_sign" {printf("!");}
 "ouput_dekho" {printf("printf");}
 "input_dao" {printf("scanf");}
 "exponential" {printf("^");}
-
-[0-9]+	{ 
+"asol_function" {printf("main");}
+"greater_than" {printf("%c", 62);}
+"less_than" {printf("%c", 60);}
+"komma" {printf(",");}
+"double_qoute" {printf("\"");}
+"single_qoute" {printf("\'");}
+" " {}
+[0-9]+ { 
 	int n = atoi(yytext);
 	printf("%d", n);
 }
-
 {identifiers} {
 	char* a=strdup(yytext);
 	printf("%s", a);
 }
+[a-zA-Z] {printf("%s", yytext);}
+[ \t\n]* {}
 
-"iff"		{ return IF;}
-"oriff"	{ return ELIF; }
-"or"		{ return ELSE;}
-
-"mfun "[A-Za-z]+	{ return MAIN; }
-
-[ \t\n]*	
-
-.	{
-		yyerror("Unknown Character.\n");
-	}
+. {
+		printf("Unknown Character.\n");
+}
 
 %%
 
@@ -99,6 +93,7 @@ multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*
 int yywrap(){}
 
 int main(){
+    yylex();
     yyin = freopen("input.txt","r",stdin);
 	yyout = freopen("output.txt","w",stdout);
 }
