@@ -53,6 +53,7 @@ multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*
 "chalaya_jao" {printf("continue");}
 "pointer" {printf("*");}
 "soman_chinho" {printf("=");}
+"double_soman_chinho" {printf("==");}
 "plus_sign" {printf("+");}
 "minus_sign" {printf("-");}
 "vagkoro" {printf("/");}
@@ -62,7 +63,7 @@ multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*
 "percentage" {printf("%c", 37);}
 "hashinclude" {printf("#");}
 "exclamatory_sign" {printf("!");}
-"ouput_dekho" {printf("printf");}
+"output_dekho" {printf("printf");}
 "input_dao" {printf("scanf");}
 "exponential" {printf("^");}
 "asol_function" {printf("main");}
