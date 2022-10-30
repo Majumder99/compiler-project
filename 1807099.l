@@ -7,16 +7,16 @@
 
 variables_of_mine "cholok_"[a-zA-Z]([a-zA-Z0-9])*[-]
 single_line_comment [/][/].*
-multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"last_comment"[/]
+multiple_line_comment [/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"last_comment"[/]
 
 %%
 
 {single_line_comment} {
-	printf("This is single line comment\n");
+	printf("//This is single line comment");
 
 }
 {multiple_line_comment} {
-	printf("This is multiple line comment\n");
+	printf("/*This is multiple line comment*/");
 }
 "stdioH" {printf("stdio.h");}
 "stringH" {printf("string.h");}
