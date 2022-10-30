@@ -1,6 +1,47 @@
-#include<stdio.h>
-intbinarySearch(int cholok_a[],int cholok_x,intcholok_low,intcholok_high){if(cholok_low>cholok_high){returnfalse;}else{intcholok_mid=(cholok_low+cholok_high)/2;if(cholok_a[cholok_mid]==cholok_x){returncholok_mid;}else if(cholok_x>cholok_a[cholok_mid]){returnbinarySearch(cholok_a,cholok_x,cholok_mid+1,cholok_high);}else{returnbinarySearch(cholok_a,cholok_x,cholok_low,cholok_mid-1);}}
-}intmain(){intcholok_k,cholok_n;scanf("%d",&cholok_n);intcholok_a[cholok_n+1];This is single line comment
-for(intcholok_i=0;cholok_i<cholok_n;cholok_i++){scanf("%d",&cholok_a[cholok_i]);}This is single line comment
-for(intcholok_i=0;cholok_i<cholok_n;cholok_i++){printf("%d",cholok_a[cholok_i]);}printf("Givethedigityouwannafind");scanf("%d",&cholok_k);intcholok_result=binarySearch(cholok_a,cholok_k,0,cholok_n-1),printf("Indexis%dvalueis%d",cholok_result,cholok_a[cholok_result]);return0;
+#include <stdio.h> 
+
+int binarySearch(int a[],int x,int low,int high){
+    if(low > high){
+        return false;
+    } else{
+        int mid =(low + high)/ 2;
+        
+        if(a[mid] == x){
+           
+            return mid;
+        } else if(x > a[mid]){
+            return binarySearch(a,x,mid + 1,high);
+        } else{
+            return binarySearch(a,x,low,mid - 1);
+        }
+    }
+}
+
+
+
+int main (){
+    int k,n;
+    scanf("%d",&n);
+    int a[n + 1];
+
+    //This is single line comment
+    for(int i = 0; i < n; i++){
+        scanf("%d",&a[i]);
+    }
+    
+    /*This is multiple line comment*/
+    for(int i = 0; i < n; i++){
+        printf("%d",a[i]);
+    }
+
+
+    printf("Give the digit you wanna find");
+
+    scanf("%d",&k);
+    
+    int result = binarySearch(a,k,0,n - 1);
+    
+    printf("Index is %d value is %d",result,a[result]);
+
+    return 0;
 }

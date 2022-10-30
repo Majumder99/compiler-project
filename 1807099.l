@@ -5,18 +5,18 @@
 	#include<stdlib.h>
 %}
 
-identifiers "cholok_"[a-zA-Z]([a-zA-Z0-9])*
+variables_of_mine "cholok_"[a-zA-Z]([a-zA-Z0-9])*[-]
 single_line_comment [/][/].*
-multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"last_comment"[/]
+multiple_line_comment [/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"last_comment"[/]
 
 %%
 
 {single_line_comment} {
-	printf("This is single line comment\n");
+	printf("//This is single line comment");
 
 }
 {multiple_line_comment} {
-	printf("This is multiple line comment\n");
+	printf("/*This is multiple line comment*/");
 }
 "stdioH" {printf("stdio.h");}
 "stringH" {printf("string.h");}
@@ -72,18 +72,25 @@ multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*
 "komma" {printf(",");}
 "double_qoute" {printf("\"");}
 "single_qoute" {printf("\'");}
+"borgomul_value"   {printf("sqrt()");}
+"sine_value"    {printf("sin()");}
+"cosine_value"    {{printf("cos()");}}
+"tangent_value"   {printf("tan()");}
+"logarithm_value"    {printf("log()");}
+"power_value"    {printf("pow()");}
 " " {printf(" ");}
+
 [0-9]+ { 
 	int n = atoi(yytext);
 	printf("%d", n);
 }
 
-{identifiers} {
+{variables_of_mine} {
 
-	char* a=strdup(yytext);
+	char* a = yytext;
     char s[50];
     int j = 0;
-    for(int i = 7 ; i < strlen(a) ; i++){
+    for(int i = 7 ; a[i] != '-' ; i++){
         s[j++] = a[i];
     }
     s[j] = '\0';
@@ -99,7 +106,7 @@ multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*
 int yywrap(){}
 
 int main(){
-    yylex();
     yyin = freopen("input.txt","r",stdin);
 	yyout = freopen("output.txt","w",stdout);
+    yylex();
 }
