@@ -6,7 +6,7 @@
 %}
 
 variables_of_mine "cholok_"[a-zA-Z]([a-zA-Z0-9])*[-]
-single_line_comment [/][/].*
+single_line_comment [_][_].*
 multiple_line_comment [/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"last_comment"[/]
 
 %%
@@ -40,14 +40,13 @@ multiple_line_comment [/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"las
 "jodi_na_tahole" {printf("else if");}
 "jonno" {printf("for");}
 "opekkhoman" {printf("while");}
-"karjokrom" {printf("function");}
 "firiye_dilam" {printf("return");}
 "kichu_nai" {printf("void");}
 "semi_colon" {printf(";");}
 "colon" {printf(":");}
 "size_of_something" {printf("sizeof");}
 "change_koro" {printf("switch");}
-"struct_funtion" {printf("struct");}
+"struct_function" {printf("struct");}
 "number_point" {printf("case");}
 "thamo_eibar" {printf("break");}
 "chalaya_jao" {printf("continue");}
@@ -61,7 +60,7 @@ multiple_line_comment [/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"las
 "minus_increment" {printf("--");}
 "ampersand" {printf("&");}
 "percentage" {printf("%c", 37);}
-"hashinclude" {printf("#");}
+"hash" {printf("#");}
 "exclamatory_sign" {printf("!");}
 "output_dekho" {printf("printf");}
 "input_dao" {printf("scanf");}
@@ -98,7 +97,7 @@ multiple_line_comment [/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"las
 }
 [a-zA-Z] {printf("%s", yytext);}
 
-
+. {printf("Unknown character");}
 
 %%
 
