@@ -39,57 +39,58 @@
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     SCOM = 258,
-     INCLUDE = 259,
-     SOURAV = 260,
-     FLB = 261,
-     FRB = 262,
-     SLB = 263,
-     SRB = 264,
-     TLB = 265,
-     TRB = 266,
-     INT = 267,
-     FLOAT = 268,
-     DOUBLE = 269,
-     STRING = 270,
-     CHAR = 271,
-     IF = 272,
-     ELIF = 273,
-     ELSE = 274,
-     FOR = 275,
-     WHILE = 276,
-     RETURN = 277,
-     VOID = 278,
-     SEMICOLON = 279,
-     COLON = 280,
-     SWITCHING = 281,
-     STRUCT = 282,
-     CASE = 283,
-     STOP = 284,
-     RUNNING = 285,
-     EQUAL = 286,
-     DEQUAL = 287,
-     PLUS = 288,
-     MINUS = 289,
-     DIVISION = 290,
-     PINC = 291,
-     MINC = 292,
-     PERCENTAGE = 293,
-     PRINTING = 294,
-     SCANNING = 295,
-     POWER = 296,
-     GREATER = 297,
-     LESSER = 298,
-     KOMMA = 299,
-     DQ = 300,
-     SQ = 301,
-     SQUARE = 302,
-     SIN = 303,
-     COS = 304,
-     TAN = 305,
-     LOG = 306,
-     DIGIT = 307,
-     VAR = 308
+     VAR = 258,
+     DIGIT = 259,
+     SCOM = 260,
+     INCLUDE = 261,
+     SOURAV = 262,
+     FLB = 263,
+     FRB = 264,
+     SLB = 265,
+     SRB = 266,
+     TLB = 267,
+     TRB = 268,
+     INT = 269,
+     FLOAT = 270,
+     DOUBLE = 271,
+     STRING = 272,
+     CHAR = 273,
+     IF = 274,
+     ELIF = 275,
+     ELSE = 276,
+     FOR = 277,
+     WHILE = 278,
+     RETURN = 279,
+     VOID = 280,
+     SEMICOLON = 281,
+     COLON = 282,
+     SWITCHING = 283,
+     STRUCT = 284,
+     CASE = 285,
+     STOP = 286,
+     RUNNING = 287,
+     EQUAL = 288,
+     DEQUAL = 289,
+     PLUS = 290,
+     MINUS = 291,
+     DIV = 292,
+     PINC = 293,
+     MINC = 294,
+     MOD = 295,
+     PRINTING = 296,
+     SCANNING = 297,
+     POWER = 298,
+     GREATER = 299,
+     LESSER = 300,
+     KOMMA = 301,
+     DQ = 302,
+     SQ = 303,
+     SQUARE = 304,
+     SIN = 305,
+     COS = 306,
+     TAN = 307,
+     LOG = 308,
+     MUL = 309
    };
 #endif
 
@@ -100,7 +101,7 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 14 "1807099.y"
+#line 15 "1807099.y"
 
 	 int number;
      char *string;
@@ -108,7 +109,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 112 "1807099.tab.h"
+#line 113 "1807099.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

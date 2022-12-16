@@ -1,0 +1,5 @@
+var is done
+arithmetic is done
+condition is 
+loop is
+function is 

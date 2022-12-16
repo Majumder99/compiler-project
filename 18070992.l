@@ -46,10 +46,10 @@ singleLineComment		[ ]*[#][#][a-zA-Z0-9@$%^&*(){}_+-,.:\|?>< ]
     "dequal" {return DEQUAL;}
     "plus" {return PLUS;}
     "minus" {return MINUS;}
-    "div" {return DIVISION;}
+    "div" {return DIV;}
     "pinc" {return PINC;}
     "minc" {return MINC;}
-    "percentage" {return PERCENTAGE;}
+    "mod" {return MOD;}
     "printing" {return PRINTING;}
     "scanning" {return SCANNING;}
     "power" {return POWER;}
@@ -59,17 +59,18 @@ singleLineComment		[ ]*[#][#][a-zA-Z0-9@$%^&*(){}_+-,.:\|?>< ]
     "dq" {return DQ;}
     "sq" {return SQ;}
     "square"   {return SQUARE;}
-    "sine"    {return SIN;}
-    "cose"    {{return COS;}}
+    "sin"    {return SIN;}
+    "cos"    {{return COS;}}
     "tan"   {return TAN;}
     "log"    {return LOG;}
+    "mul" {return MUL;}
 
     [0-9]+ { 
         yylval.number = atoi(yytext);	
         return DIGIT;
     }
 
-    [a-zA-Z][a-zA-Z0-9]* {
+   [a-zA-Z0-9]* {
         yylval.string = strdup(yytext);	
         return VAR;
     }

@@ -1,0 +1,3 @@
+bison -d 1807099.y
+flex 18070992.l
+gcc 1807099.tab.c lex.yy.c
