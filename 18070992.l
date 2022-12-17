@@ -9,11 +9,12 @@
     int yyerror();
 %}
 
-singleLineComment		[ ]*[#][#][a-zA-Z0-9@$%^&*(){}_+-,.:\|?>< ]*
-multipleLineComment		[ ]*[!][#][a-zA-Z0-9@$*(){}_+-,.:\|?><\n\t ]*[#][!]	
+singleLineComment		[ ]*[#][a-zA-Z0-9@$%^&*(){}_+-,.:\|?>< ]*
+multipleLineComment		[ ]*[#][#][a-zA-Z0-9@$*(){}_+-,.:\|?><\n\t ]*[#][#]	
 %%
 
 {singleLineComment}		{return SCOM;}
+{multipleLineComment}		{return MCOM;}
     "include" {return INCLUDE;}
     "sourav" {return SOURAV; }
     "flb"	 { return FLB ; }
@@ -24,9 +25,6 @@ multipleLineComment		[ ]*[!][#][a-zA-Z0-9@$*(){}_+-,.:\|?><\n\t ]*[#][!]
     "trb"	  { return TRB ; }
     "int"	{ return INT ; }
     "float"	{ return FLOAT ; }
-    "double"	{ return DOUBLE ; }
-    "string"	{ return STRING ; }
-    "char"	{ return CHAR ; }
     "if" {return IF ;}
     "elif" {return ELIF ;}
     "else" {return ELSE ;}
@@ -73,6 +71,10 @@ multipleLineComment		[ ]*[!][#][a-zA-Z0-9@$*(){}_+-,.:\|?><\n\t ]*[#][!]
    [a-zA-Z0-9]* {
         yylval.string = strdup(yytext);	
         return VAR;
+    }
+    [0-9]+\.?[0-9]* {
+        yylval.value = atof(yytext);	
+        return FLOATING;
     }
     [ ]*	{}
     '\n'	{}
