@@ -134,6 +134,7 @@ LOOP: FOR FLB TYPE VAR LESSER DIGIT FRB SLB OUTPUT SRB {
 	int i = 1;
 	while(i <= $6){
 		printf("%d\n", i);
+		i++;
 	 }
 	 }
 	;

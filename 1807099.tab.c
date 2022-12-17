@@ -1685,6 +1685,7 @@ yyreduce:
 	int i = 1;
 	while(i <= (yyvsp[(6) - (10)].number)){
 		printf("%d\n", i);
+		i++;
 	 }
 	 ;}
     break;
@@ -1692,7 +1693,7 @@ yyreduce:
 
 
 /* Line 1455 of yacc.c  */
-#line 1696 "1807099.tab.c"
+#line 1697 "1807099.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1904,7 +1905,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 141 "1807099.y"
+#line 142 "1807099.y"
 
 
 
