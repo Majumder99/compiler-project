@@ -66,12 +66,15 @@
 %left PLUS MINUS
 %left MUL DIV MOD
 
-/* Grammar rules and actions follow.  */
+%start HEADER
 
 %%
 
+HEADER: HEADERFILES PROGRAM ;
+HEADERFILES: INCLUDE SOURAV    {printf("header file found\n");}
+			  ;
 
-PROGRAM: INCLUDE SOURAV FLB FRB SLB BODY SRB { printf("Header file\n"); }
+PROGRAM: FLB FRB SLB BODY SRB { printf("Program end\n"); }
 			;   
 BODY: /* NULL */
 	| BODY STATEMENT
@@ -115,7 +118,7 @@ ID: VAR  { printf("Single variable declare is %s\n", $1) ;  }
 	| VAR EQUAL LOG DIGIT {printf("Log(%d) = %lf\n",$4,log($4));}
 	| VAR EQUAL DIGIT GREATER DIGIT { printf("Greater is %s = %d\n", $1, $3 > $5) ;  }
 	| VAR EQUAL DIGIT LESSER DIGIT { printf("Lesser is %s = %d\n", $1, $3 < $5) ;  }
-	| VAR EQUAL DIGIT EQUAL DIGIT { printf("Equal is %s = %d\n", $1, $3 == $5) ;  }
+	| VAR EQUAL DIGIT DEQUAL DIGIT { printf("Equal is %s = %d\n", $1, $3 == $5) ;  }
 	| VAR EQUAL DIGIT PINC { printf("Post increment is %s = %d\n", $1, $3++) ;  }
 	| VAR EQUAL DIGIT MINC { printf("Post decrement is %s = %d\n", $1, $3--) ;  }
 	| VAR EQUAL PINC DIGIT { printf("Pre increment is %s = %d\n", $1, ++$4) ;  }
@@ -137,27 +140,27 @@ PRINTF: PRINTING VAR SEMICOLON { printf("Printing for %s\n", $2)}
 LOOP: FOR FLB TYPE VAR LESSER DIGIT FRB SLB BODY SRB { 
 	
 	for(int i = 1; i <= $6; i++){
-		printf("%d\n", i);
+		printf("%d times\n", i);
 	}
 	printf("For loop\n")
  }
 	| FOR FLB TYPE VAR GREATER DIGIT FRB SLB BODY SRB { 
 	for(int i = $6; i >= 1; i--){
-		printf("%d\n", i);
+		printf("%d times\n", i);
 	 }
 	printf("For loop\n")
 }
 	| WHILE FLB TYPE VAR COLON DIGIT FRB SLB BODY SRB { 
 	int i = 1;
 	while(i <= $6){
-		printf("%d\n", i);
+		printf("%d times\n", i);
 		i++;
 	 }
 	printf("While loop\n")
 	 }
 	;
 
-FUNCTION: FUNCTURE FLB MULTIDEC FRB SLB BODY SRB { printf("Function found\n"); }
+FUNCTION: FUNCTURE VAR FLB MULTIDEC FRB SLB BODY SRB {}
 		;
 
 MULTIDEC: TYPE VAR KOMMA MULTIDEC { printf("Params %s\n", $2); }
@@ -185,8 +188,8 @@ int main()
 	freopen("output.txt","w",stdout);
 	yyparse();
 
-	// fclose(yyin);
- 	// fclose(yyout);
+	fclose(yyin);
+ 	fclose(yyout);
     
 	return 0;
 }
