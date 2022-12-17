@@ -90,7 +90,8 @@
      COS = 306,
      TAN = 307,
      LOG = 308,
-     MUL = 309
+     MUL = 309,
+     FUNCTURE = 310
    };
 #endif
 
@@ -109,7 +110,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 113 "1807099.tab.h"
+#line 114 "1807099.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

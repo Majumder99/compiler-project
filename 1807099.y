@@ -19,7 +19,7 @@
 %token <string> VAR
 %type <number> STATEMENT
 %token <number> DIGIT
-%token SCOM INCLUDE SOURAV FLB FRB SLB SRB TLB TRB INT FLOAT DOUBLE STRING CHAR IF ELIF ELSE FOR WHILE RETURN VOID SEMICOLON COLON SWITCHING STRUCT CASE STOP RUNNING EQUAL DEQUAL PLUS MINUS DIV PINC MINC MOD PRINTING SCANNING POWER GREATER LESSER KOMMA DQ SQ SQUARE SIN COS TAN LOG MUL
+%token SCOM INCLUDE SOURAV FLB FRB SLB SRB TLB TRB INT FLOAT DOUBLE STRING CHAR IF ELIF ELSE FOR WHILE RETURN VOID SEMICOLON COLON SWITCHING STRUCT CASE STOP RUNNING EQUAL DEQUAL PLUS MINUS DIV PINC MINC MOD PRINTING SCANNING POWER GREATER LESSER KOMMA DQ SQ SQUARE SIN COS TAN LOG MUL FUNCTURE
 %nonassoc SCOM
 %nonassoc INCLUDE
 %nonassoc SOURAV
@@ -82,6 +82,7 @@ STATEMENT: SEMICOLON		{}
 	| DECLARATION SEMICOLON			 { printf("Declaration\n"); }
 	| CONDITION { printf("Condition\n"); }
 	| LOOP { printf("Loop\n"); }
+	| FUNCTION {printf("Function\n");}
 	;
 
 DECLARATION: TYPE ID 
@@ -117,7 +118,15 @@ CONDITION: IF FLB DIGIT LESSER DIGIT FRB SLB OUTPUT SRB { printf("IF condition\n
 			| ELIF FLB DIGIT EQUAL DIGIT FRB SLB OUTPUT SRB { printf("ELIF condition\n"); }
 			| ELSE SLB OUTPUT SRB { printf("ELSE condition\n"); }
 			;
-OUTPUT: PRINTING VAR SEMICOLON { printf("Printing is %s\n", $2); }
+OUTPUT: PRINTING VAR SEMICOLON { 
+	// char *str = $3;
+	// int count = strlen(str);
+	// for(int i = 0; i < count; i++)
+	// {
+	// 	printf("%c ", str[i]);
+	// }
+	printf("Printing %s", $2);
+ }
 		;
 
 LOOP: FOR FLB TYPE VAR LESSER DIGIT FRB SLB OUTPUT SRB { 
@@ -138,6 +147,8 @@ LOOP: FOR FLB TYPE VAR LESSER DIGIT FRB SLB OUTPUT SRB {
 	 }
 	 }
 	;
+FUNCTION: FUNCTURE FLB TYPE VAR KOMMA TYPE VAR FRB SLB OUTPUT SRB { printf("Params are %s, %s\n", $4 , $7); }
+		;
 
 %%
 
@@ -152,8 +163,8 @@ int yywrap()
 
 int main()
 {
-	freopen("input.txt","r",stdin);
-	freopen("output.txt","w",stdout);
+	// freopen("input.txt","r",stdin);
+	// freopen("output.txt","w",stdout);
 	yyparse();
 
 	// fclose(yyin);

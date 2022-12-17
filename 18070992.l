@@ -9,9 +9,8 @@
     int yyerror();
 %}
 
-SPACE [ ]
-NEWLINE [\n]
-singleLineComment		[ ]*[#][#][a-zA-Z0-9@$%^&*(){}_+-,.:\|?>< ]
+singleLineComment		[ ]*[#][#][a-zA-Z0-9@$%^&*(){}_+-,.:\|?>< ]*
+multipleLineComment		[ ]*[!][#][a-zA-Z0-9@$*(){}_+-,.:\|?><\n\t ]*[#][!]	
 %%
 
 {singleLineComment}		{return SCOM;}
@@ -64,6 +63,7 @@ singleLineComment		[ ]*[#][#][a-zA-Z0-9@$%^&*(){}_+-,.:\|?>< ]
     "tan"   {return TAN;}
     "log"    {return LOG;}
     "mul" {return MUL;}
+    "functure" {return FUNCTURE;}
 
     [0-9]+ { 
         yylval.number = atoi(yytext);	
