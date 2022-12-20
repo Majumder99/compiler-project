@@ -1,0 +1,219 @@
+header file found
+
+
+Single line comment
+
+Single variable declare is b
+Multiple variable declare is a
+Declaration
+
+Variable declare with value is f = 6
+Multiple variable declare is e
+Declaration
+
+Variable declare with value is c = 5
+Declaration
+
+Single variable declare is d
+Declaration
+
+Variable declare with value is a = 5.60
+Declaration
+
+Single variable declare is b
+Declaration
+
+
+
+
+
+Multi line comment
+
+
+Addition is a = 8
+Declaration
+
+Minus is b = -2
+Declaration
+
+Multiplication is c = 35
+Declaration
+
+Division is d = 0
+Declaration
+
+MOD is e = 7
+Declaration
+
+Power is f = 8
+Declaration
+
+Square is z = 81
+Declaration
+
+Sin(30) = 0.500001
+Declaration
+
+Cos(30) = 0.866025
+Declaration
+
+Tan(30) = 0.577352
+Declaration
+
+Log(10) = 2.302585
+Declaration
+
+
+Addition is a = 8.70
+Declaration
+
+Minus is b = -2.10
+Declaration
+
+Multiplication is c = 40.50
+Declaration
+
+Division is d = 0.76
+Declaration
+
+
+Single line comment
+
+Greater is a = 0
+Declaration
+
+Lesser is b = 1
+Declaration
+
+Equal is c = 0
+Declaration
+
+
+Single line comment
+
+
+Printing for 5lessthan10
+
+IF condition
+
+
+Printing for 5equalto10
+
+ELIF condition
+
+
+Printing for 5isnotlessthan10
+
+ELSE condition
+
+
+Single line comment
+
+
+Printing for i
+
+1 times
+2 times
+3 times
+4 times
+5 times
+6 times
+7 times
+8 times
+9 times
+10 times
+For loop
+
+
+
+Printing for i
+
+10 times
+9 times
+8 times
+7 times
+6 times
+5 times
+4 times
+3 times
+2 times
+1 times
+For loop
+
+
+Single line comment
+
+
+Printing for i
+
+Continue
+
+Break
+
+10 times
+9 times
+8 times
+7 times
+6 times
+5 times
+4 times
+3 times
+2 times
+1 times
+For loop
+
+
+
+
+Single line comment
+
+
+Printing for i
+
+1 times
+2 times
+3 times
+4 times
+5 times
+6 times
+7 times
+8 times
+9 times
+10 times
+While loop
+
+
+Single line comment
+
+Post increment is a = 5
+Declaration
+
+Post decrement is b = 5
+Declaration
+
+Pre increment is c = 6
+Declaration
+
+Pre decrement is d = 4
+Declaration
+
+
+Single line comment
+
+Function called
+Params b
+Params a
+
+Printing for ikommaj
+
+
+
+Function called
+Params b
+Params a
+
+Printing for ikommaj
+
+
+
+Program end

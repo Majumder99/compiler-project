@@ -515,9 +515,9 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "18070992.l"
+#line 1 "1807099.l"
 #define INITIAL 0
-#line 2 "18070992.l"
+#line 2 "1807099.l"
     #include "1807099.tab.h"
     #include<stdio.h>
     #include<stdlib.h>
@@ -677,7 +677,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 14 "18070992.l"
+#line 14 "1807099.l"
 
 
 #line 684 "lex.yy.c"
@@ -765,252 +765,252 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 16 "18070992.l"
+#line 16 "1807099.l"
 {return SCOM;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 17 "18070992.l"
+#line 17 "1807099.l"
 {return MCOM;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 18 "18070992.l"
+#line 18 "1807099.l"
 {return INCLUDE;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 19 "18070992.l"
+#line 19 "1807099.l"
 {return SOURAV; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 20 "18070992.l"
+#line 20 "1807099.l"
 { return FLB ; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 21 "18070992.l"
+#line 21 "1807099.l"
 { return FRB ; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 22 "18070992.l"
+#line 22 "1807099.l"
 { return SLB ; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 23 "18070992.l"
+#line 23 "1807099.l"
 { return SRB ; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 24 "18070992.l"
+#line 24 "1807099.l"
 { return TLB ; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 25 "18070992.l"
+#line 25 "1807099.l"
 { return TRB ; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 26 "18070992.l"
+#line 26 "1807099.l"
 { return INT ; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 27 "18070992.l"
+#line 27 "1807099.l"
 { return FLOAT ; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 28 "18070992.l"
+#line 28 "1807099.l"
 {return IF ;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 29 "18070992.l"
+#line 29 "1807099.l"
 {return ELIF ;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 30 "18070992.l"
+#line 30 "1807099.l"
 {return ELSE ;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 31 "18070992.l"
+#line 31 "1807099.l"
 {return FOR ;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 32 "18070992.l"
+#line 32 "1807099.l"
 {return WHILE ;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 33 "18070992.l"
+#line 33 "1807099.l"
 {return RETURN ;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 34 "18070992.l"
+#line 34 "1807099.l"
 {return VOID;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 35 "18070992.l"
+#line 35 "1807099.l"
 {return SEMICOLON;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 36 "18070992.l"
+#line 36 "1807099.l"
 {return COLON;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 37 "18070992.l"
+#line 37 "1807099.l"
 {return SWITCHING ;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 38 "18070992.l"
+#line 38 "1807099.l"
 {return STRUCT;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 39 "18070992.l"
+#line 39 "1807099.l"
 {return CASE;}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 40 "18070992.l"
+#line 40 "1807099.l"
 {return STOP;}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 41 "18070992.l"
+#line 41 "1807099.l"
 {return RUNNING;}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 42 "18070992.l"
+#line 42 "1807099.l"
 {return EQUAL;}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 43 "18070992.l"
+#line 43 "1807099.l"
 {return DEQUAL;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 44 "18070992.l"
+#line 44 "1807099.l"
 {return PLUS;}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 45 "18070992.l"
+#line 45 "1807099.l"
 {return MINUS;}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 46 "18070992.l"
+#line 46 "1807099.l"
 {return DIV;}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 47 "18070992.l"
+#line 47 "1807099.l"
 {return PINC;}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 48 "18070992.l"
+#line 48 "1807099.l"
 {return MINC;}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 49 "18070992.l"
+#line 49 "1807099.l"
 {return MOD;}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 50 "18070992.l"
+#line 50 "1807099.l"
 {return PRINTING;}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 51 "18070992.l"
+#line 51 "1807099.l"
 {return SCANNING;}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 52 "18070992.l"
+#line 52 "1807099.l"
 {return POWER;}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 53 "18070992.l"
+#line 53 "1807099.l"
 {return GREATER;}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 54 "18070992.l"
+#line 54 "1807099.l"
 {return LESSER;}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 55 "18070992.l"
+#line 55 "1807099.l"
 {return KOMMA ;}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 56 "18070992.l"
+#line 56 "1807099.l"
 {return DQ;}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 57 "18070992.l"
+#line 57 "1807099.l"
 {return SQ;}
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 58 "18070992.l"
+#line 58 "1807099.l"
 {return SQUARE;}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 59 "18070992.l"
+#line 59 "1807099.l"
 {return SIN;}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 60 "18070992.l"
+#line 60 "1807099.l"
 {{return COS;}}
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 61 "18070992.l"
+#line 61 "1807099.l"
 {return TAN;}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 62 "18070992.l"
+#line 62 "1807099.l"
 {return LOG;}
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 63 "18070992.l"
+#line 63 "1807099.l"
 {return MUL;}
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 64 "18070992.l"
+#line 64 "1807099.l"
 {return FUNCTURE;}
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 66 "18070992.l"
+#line 66 "1807099.l"
 { 
         yylval.number = atoi(yytext);	
         return DIGIT;
@@ -1018,7 +1018,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 71 "18070992.l"
+#line 71 "1807099.l"
 {
         yylval.string = strdup(yytext);	
         return VAR;
@@ -1026,7 +1026,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 75 "18070992.l"
+#line 75 "1807099.l"
 {
         yylval.value = atof(yytext);	
         return FLOATING;
@@ -1034,27 +1034,27 @@ YY_RULE_SETUP
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 79 "18070992.l"
+#line 79 "1807099.l"
 {}
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 80 "18070992.l"
+#line 80 "1807099.l"
 {}
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 81 "18070992.l"
+#line 81 "1807099.l"
 {}
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 82 "18070992.l"
+#line 82 "1807099.l"
 {printf("%s --> invalid\n",yytext);}
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 85 "18070992.l"
+#line 85 "1807099.l"
 ECHO;
 	YY_BREAK
 #line 1061 "lex.yy.c"
@@ -1943,5 +1943,5 @@ int main()
 	return 0;
 	}
 #endif
-#line 85 "18070992.l"
+#line 85 "1807099.l"
 

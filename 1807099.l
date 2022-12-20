@@ -1,53 +1,85 @@
 %{
-	#include<stdio.h>
-	#include<string.h>
-	#include<stdlib.h>
-	#include<math.h>
-	#include<stdarg.h>
+    #include "1807099.tab.h"
+    #include<stdio.h>
+    #include<stdlib.h>
+    #include <string.h>
+    extern YYSTYPE yylval;
+    int yyparse();
+    int yylex();
+    int yyerror();
 %}
 
-alpha [a-zA-Z][a-zA-Z0-9]*
-digit [0-9]
-keyWord					IF|ELIF|ELSE|LOOP|RETURN|INTGR|FLOATING|CHARAC|SWITCHING|CASING|BREAK|DEF|PRINTS
-singleLineComment		[ ]*[#][#][a-zA-Z0-9@$%^&*(){}_+-,.:\|?>< ]*
-multiple_line_comment   [/]"*"[a-zA-Z0-9!@#*_+-,:\|?><\n\t ]*"*"[/]
-
+singleLineComment		[ ]*[#][a-zA-Z0-9@$%^&*(){}_+-,.:\|?>< ]*
+multipleLineComment		[ ]*[#][#][a-zA-Z0-9@$*(){}_+-,.:\|?><\n\t ]*[#][#]	
 %%
 
-"flb" {return flb;}
-"SWITCHING" 		   { return SWITCH; }
-"PRINTS" 		       { return PF; }
-"CASING"   		   { return CASE;  } 
-"IF" 			   { return IF;   }
-"ELIF"			{return ELIF;}
-"ELSE" 		   { return ELSE; }
-"BREAK"  		   { return BREAK;  }
-DEF 	       { return DEFAULT; }
+{singleLineComment}		{return SCOM;}
+{multipleLineComment}		{return MCOM;}
+    "include" {return INCLUDE;}
+    "sourav" {return SOURAV; }
+    "flb"	 { return FLB ; }
+    "frb"	  { return FRB ; }
+    "slb"	 { return SLB ; }
+    "srb"	  { return SRB ; }
+    "tlb"	 { return TLB ; }
+    "trb"	  { return TRB ; }
+    "int"	{ return INT ; }
+    "float"	{ return FLOAT ; }
+    "if" {return IF ;}
+    "elif" {return ELIF ;}
+    "else" {return ELSE ;}
+    "FL" {return FOR ;}
+    "WL" {return WHILE ;}
+    "return" {return RETURN ;}
+    "void" {return VOID;}
+    "sc" {return SEMICOLON;}
+    "col" {return COLON;}
+    "switching" {return SWITCHING ;}
+    "structure" {return STRUCT;}
+    "casing" {return CASE;}
+    "stop" {return STOP;}
+    "running" {return RUNNING;}
+    "equal" {return EQUAL;}
+    "dequal" {return DEQUAL;}
+    "plus" {return PLUS;}
+    "minus" {return MINUS;}
+    "div" {return DIV;}
+    "pinc" {return PINC;}
+    "minc" {return MINC;}
+    "mod" {return MOD;}
+    "printing" {return PRINTING;}
+    "scanning" {return SCANNING;}
+    "power" {return POWER;}
+    "greater" {return GREATER;}
+    "lesser" {return LESSER;}
+    "komma" {return KOMMA ;}
+    "dq" {return DQ;}
+    "sq" {return SQ;}
+    "square"   {return SQUARE;}
+    "sin"    {return SIN;}
+    "cos"    {{return COS;}}
+    "tan"   {return TAN;}
+    "log"    {return LOG;}
+    "mul" {return MUL;}
+    "functure" {return FUNCTURE;}
 
-"{" 		   { return START;  }
-"}"  		   { return END;	}
-LOOP 		   { return LOOP;}
-SIN			   {return SIN;}
-COS            {return COS;}
-TAN            {return TAN;}
-LN			   {return LOG;}
-LOG 		   {return LOG10;}
+    [0-9]+ { 
+        yylval.number = atoi(yytext);	
+        return DIGIT;
+    }
 
-{singleLineComment}		{return COM;}
-
-
-INTGR  			 {return INT;}
-CHARAC 		         {return CHAR;}
-FLOATING 			 	{return FLOAT;}
-"main"	   { return MAIN; }
-
-{digit}+	{ yylval.number = atoi(yytext);	 return NUM; }
-{alpha}	    { yylval.string = strdup(yytext);	 return VAR; }
-[-+/*<>=,():;%^]     { return *yytext;	}
-[ ]*	    			{}
-[\n]*					{}
-[\t]*					{}
-.						{printf("%s --> invalid\n",yytext);}
+   [a-zA-Z0-9]* {
+        yylval.string = strdup(yytext);	
+        return VAR;
+    }
+    [0-9]+\.?[0-9]* {
+        yylval.value = atof(yytext);	
+        return FLOATING;
+    }
+    [ ]*	{}
+    '\n'	{}
+    '\t'	{}
+    .	    {printf("%s --> invalid\n",yytext);}
 
 
 %%

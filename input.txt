@@ -1,0 +1,88 @@
+include sourav flb frb slb
+
+    #Variable declarations
+    int a komma b sc
+    int e komma f equal 6 sc
+    int c equal 5 sc
+    int d sc
+    float a equal 5.6 sc
+    float b sc
+
+
+
+
+    ## Arithmetic 
+        Operations ##
+
+    int a equal 3 plus 5 sc
+    int b equal 4 minus 6 sc
+    int c equal 5 mul 7 sc  
+    int d equal 6 div 8 sc
+    int e equal 7 mod 9 sc
+    int f equal 2 power 3 sc
+    int z equal 9 square sc
+    int p equal sin 30 sc
+    int q equal cos 30 sc
+    int r equal tan 30 sc
+    int s equal log 10 sc
+
+    float a equal 3.2 plus 5.5 sc
+    float b equal 4.3 minus 6.4 sc
+    float c equal 5.4 mul 7.5 sc
+    float d equal 6.5 div 8.6 sc
+
+    #Logical Operations
+    int a equal 5 greater 6 sc
+    int b equal 5 lesser 6 sc
+    int c equal 5 dequal 6 sc
+
+    #Condition
+    if flb 5 lesser 10 frb slb
+        printing 5lessthan10 sc
+    srb
+    elif flb 5 equal 10 frb slb
+        printing 5equalto10 sc
+    srb
+    else slb
+        printing 5isnotlessthan10 sc
+    srb
+
+    #For loop   
+    FL flb int i lesser 10 frb slb
+        printing i sc
+    srb
+    
+    FL flb int i greater 10 frb slb
+        printing i sc
+    srb
+
+    #Break and Continue
+    FL flb int i greater 10 frb slb
+        printing i sc
+        running sc
+        stop sc
+    srb
+
+
+
+    #While loop
+    WL flb int i col 10 frb slb
+        printing i sc
+    srb
+
+    #Increment decrement
+    int a equal 5 pinc sc
+    int b equal 5 minc sc
+    int c equal pinc 5 sc
+    int d equal minc 5 sc
+
+    #Function
+    functure check flb int a komma int b frb slb
+        printing ikommaj sc
+    srb
+
+    functure check flb float a komma int b frb slb
+        printing ikommaj sc
+    srb
+
+srb
